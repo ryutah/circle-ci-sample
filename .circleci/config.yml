@@ -13,10 +13,9 @@ jobs:
       - checkout
 
       # specify any bash command here prefixed with `run: `
-      - run: echo $PROJECT_ID
-#       - run: mkdir -p $TEST_RESULTS
-#       - run: goapp get -u github.com/golang/dep/cmd/dep
-#       - run:
-#           name: Run unit tests
-#           command: goapp test -v ./...
-#       - run: sh deploy.sh
+      - run: mkdir -p $TEST_RESULTS
+      - run: goapp get -u github.com/golang/dep/cmd/dep
+      - run:
+          name: Run unit tests
+          command: goapp test -v ./...
+      - run: sh deploy.sh
