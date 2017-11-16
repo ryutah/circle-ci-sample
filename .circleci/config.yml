@@ -26,10 +26,10 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: mkdir -p $TEST_RESULTS
       - run: go get github.com/jstemmer/go-junit-report
-      - run: go test -v ./...
+      - run:
           name: Run unit tests
           command: |
-            go test -v | tee ${TEST_RESULTS}/go-test.out
+            go test -v ./... | tee ${TEST_RESULTS}/go-test.out
             go-junit-report < ${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml
       - run: echo "hello world"
       - store_test_results:
