@@ -17,5 +17,5 @@ jobs:
       - run: dep ensure
       - run:
           name: Run unit tests
-          command: goapp test -v ./...
+          command: goapp test -v github.com/ryutah/circle-ci-sample/...
       - run: sh deploy.sh
